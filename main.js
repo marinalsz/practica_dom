@@ -1,14 +1,18 @@
 //ASIDE
-let parrafoAside = document.createElement("p");
+let anchorAside = document.createElement("a");
+anchorAside.href = "https://store.fcbarcelona.com/es/account/register";
+anchorAside.target = "_blank";
 let textoAside = document.createTextNode("Regístrate gratis y obtén un 15% dto. en tu primera compra");
-parrafoAside.appendChild(textoAside);
+anchorAside.appendChild(textoAside);
 let aside = document.querySelector("aside");
-aside.appendChild(parrafoAside);
+aside.appendChild(anchorAside);
 
 //HEADER
-let imgHeader = document.createElement("img");
-let header = document.querySelector("header");
-header.appendChild(imgHeader);
+const temaBtn = document.querySelector("#temaBtn");
+
+temaBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+});
 
 //SECTION #JUGADORES
 const jugadores = [
@@ -70,7 +74,7 @@ const jugadores = [
   },
 ];
 
-const playerContainer = document.querySelector("#equipo-masculino");
+const playerContainer = document.querySelector("#equipoMasculino");
 
 for (const jugador of jugadores) {
   const li = document.createElement("li");

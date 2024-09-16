@@ -3,10 +3,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 :root {
-  --fcb-color-one: #181733;
-  --fcb-color-two: #ffffff;
-  --fcb-color-three: #0068ff;
-  --fcb-color-four: #ef1f46;
+  --fcb-pacific-cyan: #06aed5ff;
+  --fcb-cerulean: #086788ff;
+  --fcb-jonquil: #f0c808ff;
+  --fcb-papaya-whip: #fff1d0ff;
+  --fcb-rojo: #dd1c1aff;
+
+  --fcb-black: #000000ff;
+  --fcb-oxford-blue: #14213dff;
+  --fcb-orange-web: #fca311ff;
+  --fcb-platinum: #e5e5e5ff;
+  --fcb-white: #ffffffff;
+
   --spacing: 20px;
   --small-spacing: 10px;
   --font-one: "Oswald", sans-serif;
@@ -25,9 +33,11 @@ html {
 }
 
 body {
-  background-color: var(--fcb-color-one);
-  color: var(--fcb-color-two);
+  background-color: var(--fcb-pacific-cyan);
+  color: var(--fcb-papaya-whip);
   font-family: var(--font-three);
+  border: 2px solid black;
+  transition: 0.3s;
 }
 
 body::-webkit-scrollbar {
@@ -40,9 +50,13 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: var(--fcb-color-three);
+  background-color: var(--fcb-cerulean);
 }
 
+.dark{
+  background-color: var(--fcb-oxford-blue);
+  color: var(--fcb-platinum);
+}
 
 ul,
 ol {
@@ -52,6 +66,11 @@ ol {
 a {
   text-decoration: none;
   font-family: var(--font-two);
+  color: var(--fcb-papaya-whip);
+}
+
+a:hover{
+  color: var(--fcb-jonquil);
 }
 
 aside {
@@ -60,7 +79,12 @@ aside {
   padding: var(--spacing);
   text-align: center;
   font-weight: bold;
-  background-image: linear-gradient(to right, var(--fcb-color-three), var(--fcb-color-four));
+  background-image: linear-gradient(
+    to right,
+    var(--fcb-cerulean),
+    var(--fcb-rojo)
+  );
+  border-bottom: 2px solid black;
 }
 
 #social {

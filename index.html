@@ -19,15 +19,35 @@
     />
     <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
-    <title>Tienda Oficial del Barça</title>
+    <title>FC Barcelona - Tienda</title>
   </head>
   <body>
     <aside></aside>
-    <header></header>
+    <header>
+      <div>
+        <img
+          src="https://res.cloudinary.com/darvwfw0u/image/upload/v1726316799/svg_xml_base64_PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIwLjkyMTIgMC40OTg5NzhMMjEuMDgyOCAwLjYwNDUwNkMyMi44NTU5IDEuNzY0MTYgMjQuMjgzNCAxL_1_n3vrid.svg"
+          alt="Escudo del Barça"
+        />
+        <a href="#" target="_blank"><h1>FC Barcelona Tienda</h1></a>
+        <search>
+          <form>
+            <input name="fsrch" id="fsrch" placeholder="Buscar" />
+          </form>
+        </search>
+        <label for="currency">Selecciona la moneda:</label>
+        <select id="currency" onchange="changeCurrency()">
+            <option value="USD">USD - Dólar estadounidense</option>
+            <option value="EUR">EUR - Euro</option>
+            <option value="MXN">MXN - Peso mexicano</option>
+        </select>
+        <button id="temaBtn">Tema</button>
+      </div>
+    </header>
     <main>
-      <section id="nuevas-equipaciones"></section>
+      <section id="nuevasEquipaciones"></section>
       <section id="jugadores">
-        <ul id="equipo-masculino"></ul>
+        <ul id="equipoMasculino"></ul>
       </section>
       <section id="moda"></section>
       <section id="camiseta"></section>
