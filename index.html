@@ -24,28 +24,49 @@
   <body>
     <aside></aside>
     <header>
-      <div>
-        <img
-          src="https://res.cloudinary.com/darvwfw0u/image/upload/v1726316799/svg_xml_base64_PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIwLjkyMTIgMC40OTg5NzhMMjEuMDgyOCAwLjYwNDUwNkMyMi44NTU5IDEuNzY0MTYgMjQuMjgzNCAxL_1_n3vrid.svg"
-          alt="Escudo del Barça"
-        />
-        <a href="#" target="_blank"><h1>FC Barcelona Tienda</h1></a>
-        <search>
-          <form>
-            <input name="fsrch" id="fsrch" placeholder="Buscar" />
-          </form>
-        </search>
-        <label for="currency">Selecciona la moneda:</label>
-        <select id="currency" onchange="changeCurrency()">
-            <option value="USD">USD - Dólar estadounidense</option>
-            <option value="EUR">EUR - Euro</option>
-            <option value="MXN">MXN - Peso mexicano</option>
-        </select>
-        <button id="temaBtn">Tema</button>
+      <a href="#" target="_self"
+        ><img
+          src="https://store.fcbarcelona.com/cdn/shop/t/9/assets/logo-store.svg?v=170870924368161716781676997476"
+          alt="FC Barcelona Tienda logo"
+      /></a>
+      <nav>
+        <ul class="sectionLinks">
+          <li><a href="#" target="_self">Equipaciones</a></li>
+          <li><a href="#" target="_self">Comprar por jugador</a></li>
+          <li><a href="#" target="_self">Entrenamiento</a></li>
+          <li><a href="#" target="_self">Moda</a></li>
+          <li><a href="#" target="_self">Memorabilia</a></li>
+          <li><a href="#" target="_self">Accesorios</a></li>
+          <li><a href="#" target="_self">Rebajas</a></li>
+        </ul>
+      </nav>
+      <div class="icons">
+        <button id="temaBtn" type="button">2</button>
+        <a href="#" target="_self"
+          ><img
+            src="https://res.cloudinary.com/darvwfw0u/image/upload/v1727093484/search_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24_nllazb.svg"
+            alt="Icono de búsqueda"
+        /></a>
+        <a href="#" target="_self"
+          ><img
+            src="https://res.cloudinary.com/darvwfw0u/image/upload/v1727093805/person_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24_yemzx0.svg"
+            alt="Icono de persona"
+        /></a>
+        <a href="#" target="_self"
+          ><img
+            src="https://res.cloudinary.com/darvwfw0u/image/upload/v1727093917/shopping_bag_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24_cdqxyz.svg"
+            alt="Icono de cesta"
+        /></a>
       </div>
     </header>
     <main>
-      <section id="nuevasEquipaciones"></section>
+      <section id="nuevasEquipaciones">
+        <img src="https://res.cloudinary.com/darvwfw0u/image/upload/v1727108847/nuevas_equipaciones_wt8epr.png" alt="Nuevas equipaciones del FC Barcelona">
+        <div class="info">
+          <h1>Nuevas equipaciones 24/25</h1>
+          <a href="#" target="_self" class="shop">Comprar</a>
+        </div>
+      </section>
       <section id="jugadores">
         <ul id="equipoMasculino"></ul>
       </section>

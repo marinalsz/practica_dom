@@ -1,18 +1,28 @@
 //ASIDE
-let anchorAside = document.createElement("a");
-anchorAside.href = "https://store.fcbarcelona.com/es/account/register";
-anchorAside.target = "_blank";
-let textoAside = document.createTextNode("Regístrate gratis y obtén un 15% dto. en tu primera compra");
-anchorAside.appendChild(textoAside);
-let aside = document.querySelector("aside");
-aside.appendChild(anchorAside);
+const aside = document.querySelector("aside");
+const asideContent = `<a href="#" target="_self">Regístrate gratis y obtén un 15% dto. en tu primera compra</a>`;
+aside.innerHTML = asideContent;
 
 //HEADER
 const temaBtn = document.querySelector("#temaBtn");
 
 temaBtn.addEventListener("click", () => {
   document.body.classList.toggle("dark");
+  changeText();
 });
+
+const changeText = () => {
+  const themeBtn = document.querySelector("#temaBtn");
+  if (themeBtn.innerText === "1") {
+    themeBtn.innerText = "2";
+  } 
+  if (themeBtn.innerText === "2") {
+    themeBtn.innerText = "3";
+  }
+  else {
+    themeBtn.innerText = "2";
+  }
+};
 
 //SECTION #JUGADORES
 const jugadores = [
@@ -74,7 +84,7 @@ const jugadores = [
   },
 ];
 
-const playerContainer = document.querySelector("#equipoMasculino");
+/* const playerContainer = document.querySelector("#equipoMasculino");
 
 for (const jugador of jugadores) {
   const li = document.createElement("li");
@@ -84,7 +94,7 @@ for (const jugador of jugadores) {
   </a>
   `;
   playerContainer.appendChild(li);
-}
+} */
 
 //SECTION #MODA
 const productos = [
@@ -209,7 +219,7 @@ const redesSociales = [
   },
 ];
 
-const socialContainer = document.querySelector("#social");
+/* const socialContainer = document.querySelector("#social");
 
 for (const red of redesSociales) {
   const li = document.createElement("li");
@@ -218,13 +228,5 @@ for (const red of redesSociales) {
     <img src="${red.logo}" alt="${red.name}"  />
   </a>
   `;
-  /*  const a = document.createElement("a");
-  a.href = red.link;
-  const img = document.createElement("img");
-  img.src = red.logo;
-  img.alt = red.name;
-  a.appendChild(img);
-  li.appendChild(a); */
-  //Al final del todo le inyectamos cada uno de los li's al contenedor
   socialContainer.appendChild(li);
-}
+} */

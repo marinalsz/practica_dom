@@ -3,11 +3,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 :root {
+  --fcb-blue:#0068ff;
+  --fcb-red:#ef1f46;
+  --fcb-yellow:#fbc43f;
+
   --fcb-pacific-cyan: #06aed5ff;
   --fcb-cerulean: #086788ff;
   --fcb-jonquil: #f0c808ff;
   --fcb-papaya-whip: #fff1d0ff;
-  --fcb-rojo: #dd1c1aff;
 
   --fcb-black: #000000ff;
   --fcb-oxford-blue: #14213dff;
@@ -33,8 +36,8 @@ html {
 }
 
 body {
-  background-color: var(--fcb-pacific-cyan);
-  color: var(--fcb-papaya-whip);
+  background-color: var(--fcb-blue);
+  color: var(--fcb-red);
   font-family: var(--font-three);
   border: 2px solid black;
   transition: 0.3s;
@@ -53,9 +56,20 @@ body::-webkit-scrollbar-thumb {
   background-color: var(--fcb-cerulean);
 }
 
-.dark{
+.dark {
   background-color: var(--fcb-oxford-blue);
   color: var(--fcb-platinum);
+}
+
+h1,h2,h3,h4{
+  font-family: var(--font-one);
+}
+
+h1{
+  text-transform: uppercase;
+  font-size: 4em;
+  color: transparent;
+  -webkit-text-stroke: 3px var(--fcb-red);
 }
 
 ul,
@@ -67,70 +81,97 @@ a {
   text-decoration: none;
   font-family: var(--font-two);
   color: var(--fcb-papaya-whip);
+  transition: all 0.3s ease-in-out;
 }
 
-a:hover{
+a:hover {
   color: var(--fcb-jonquil);
 }
 
+a.shop{
+  width: 150px;
+  height: 50px;
+  background-color: var(--fcb-jonquil);
+  color: var(--fcb-black);
+  font-size: 1em;
+  text-transform: uppercase;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+}
+
+/*ASIDE*/
+
 aside {
   width: 100%;
-  height: auto;
+  height: 50px;
   padding: var(--spacing);
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: bold;
-  background-image: linear-gradient(
-    to right,
-    var(--fcb-cerulean),
-    var(--fcb-rojo)
-  );
   border-bottom: 2px solid black;
 }
 
-#social {
+/*HEADER*/
+
+header {
+  width: 100%;
+  height: 100px;
+  padding: var(--spacing);
+  gap: var(--small-spacing);
   display: flex;
-  gap: 10px;
-  list-style-type: none;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  background: linear-gradient(blue, pink);
+  border-bottom: 2px solid black;
 }
 
-#social img {
-  width: 38px;
-  height: 38px;
-  filter: saturate(0);
-}
-#social img:hover {
-  filter: saturate(1);
+.sectionLinks{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--small-spacing);
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-auto-rows: 300px;
-  gap: 20px;
-  padding: 20px 0;
+.icons{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: var(--small-spacing);
 }
 
-.gallery img {
+main{
+  width: 100%;
+  min-height: 500vh;
+}
+
+/*NUEVAS EQUIPACIONES*/
+
+section #nuevasEquipaciones{
+  width: 100%;
+  min-height: 100vh;
+  border-bottom: 2px solid black;
+  position: relative;
+  overflow: hidden;
+}
+
+#nuevasEquipaciones > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.list {
-  grid-template-columns: 1fr;
-}
-
-main {
-  text-align: center;
-}
-
-main button {
-  border: none;
-  background-color: transparent;
-  font-family: Helvetica, sans-serif;
-  padding: 4px 8px;
-  margin: 10px;
-  font-size: 40px;
+.info {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing);
+  padding: var(--spacing);
+  position: absolute;
+  bottom: 10%;
+  z-index: 1;
 }
