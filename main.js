@@ -1,30 +1,14 @@
 //ASIDE
+
 const aside = document.querySelector("aside");
 const asideContent = `<a href="#" target="_self">Regístrate gratis y obtén un 15% dto. en tu primera compra</a>`;
 aside.innerHTML = asideContent;
 
 //HEADER
-const temaBtn = document.querySelector("#temaBtn");
 
-temaBtn.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-  changeText();
-});
-
-const changeText = () => {
-  const themeBtn = document.querySelector("#temaBtn");
-  if (themeBtn.innerText === "1") {
-    themeBtn.innerText = "2";
-  } 
-  if (themeBtn.innerText === "2") {
-    themeBtn.innerText = "3";
-  }
-  else {
-    themeBtn.innerText = "2";
-  }
-};
 
 //SECTION #JUGADORES
+
 const jugadores = [
   {
     number: 1,
@@ -84,17 +68,109 @@ const jugadores = [
   },
 ];
 
-/* const playerContainer = document.querySelector("#equipoMasculino");
+const jugadoras = [
+  {
+    number: 1,
+    name: "Gemma",
+    position: "Portera",
+    image:
+      "https://www.fcbarcelona.com/photo-resources/2023/10/16/782e2b0e-36d0-4951-b98b-3bb4270a4fb7/25-Gemma.jpg?width=640&height=400",
+  },
+  {
+    number: 4,
+    name: "María León",
+    position: "Defensa",
+    image:
+      "https://www.fcbarcelona.com/photo-resources/2023/10/16/fd8fdbd0-aade-4a07-ac1e-b72a81f99d43/04-Mapi.jpg?width=640&height=400",
+  },
+  {
+    number: 22,
+    name: "Ona Batlle",
+    position: "Defensa",
+    image:
+      "https://www.fcbarcelona.com/photo-resources/2023/10/16/ae61cf98-09cf-465e-8bb1-43426ec027f7/22-Ona_batlle.jpg?width=640&height=400",
+  },
+  {
+    number: 11,
+    name: "Alexia",
+    position: "Centrocampista",
+    image:
+      "https://www.fcbarcelona.com/photo-resources/2023/10/16/74b498d2-032c-4d84-b24c-e8d7d0fa575b/11-Alexia.jpg?width=640&height=400",
+  },
+  {
+    number: 12,
+    name: "Patri",
+    position: "Centrocampista",
+    image:
+      "https://www.fcbarcelona.com/photo-resources/2023/10/16/b253d4b3-013e-4279-ab81-f2d37ac18544/12-Patri.jpg?width=640&height=400",
+  },
+  {
+    number: 23,
+    name: "Engen",
+    position: "Centrocampista",
+    image:
+      "https://www.fcbarcelona.com/photo-resources/2023/10/16/906fb7ad-5be6-424e-8479-0cabc0c2785c/23-Engen.jpg?width=640&height=400",
+  },
+  {
+    number: 7,
+    name: "Paralluelo",
+    position: "Delantera",
+    image:
+      "https://www.fcbarcelona.com/photo-resources/2023/10/16/f13c1c0c-df29-43f2-b24c-63c5d7da3fc8/07-Paralluelo.jpg?width=640&height=400",
+  },
+  {
+    number: 16,
+    name: "Rolfö",
+    position: "Delantera",
+    image:
+      "https://www.fcbarcelona.com/photo-resources/2023/10/16/13ce36ed-009d-4dce-b63f-e110f129ffe8/16-Rolfo.jpg?width=640&height=400",
+  },
+];
 
-for (const jugador of jugadores) {
-  const li = document.createElement("li");
-  li.innerHTML = `
-  <a href="${jugador.name}" target="_blank">
-    <img src="${jugador.image}" alt="${jugador.name}"  />
-  </a>
-  `;
-  playerContainer.appendChild(li);
-} */
+const mostrarJugadores = () => {
+  const contenedorJugadores = document.getElementById("equipoMasculino");
+  contenedorJugadores.innerHTML = "";
+  document.getElementById("equipoFemenino").style.display = "none";
+  document.getElementById("equipoMasculino").style.display = "grid";
+  for (const jugador of jugadores) {
+    const li = document.createElement("li");
+    li.innerHTML = `
+    <a href="#" target="_self">
+      <img src="${jugador.image}" alt="${jugador.name}"  />
+    </a>
+    <p>#${jugador.number}</p>
+    <h3>${jugador.name}</h3>
+    <p>${jugador.position}</p>
+    `;
+    contenedorJugadores.appendChild(li);
+  }
+};
+
+const mostrarJugadoras = () => {
+  const contenedorJugadoras = document.getElementById("equipoFemenino");
+  contenedorJugadoras.innerHTML = "";
+  document.getElementById("equipoFemenino").style.display = "grid";
+  document.getElementById("equipoMasculino").style.display = "none";
+  for (const jugadora of jugadoras) {
+    const li = document.createElement("li");
+    li.innerHTML = `
+    <a href="#" target="_self">
+      <img src="${jugadora.image}" alt="${jugadora.name}"  />
+    </a>
+    <p>#${jugadora.number}</p>
+    <h3>${jugadora.name}</h3>
+    <p>${jugadora.position}</p>
+    `;
+    contenedorJugadoras.appendChild(li);
+  }
+};
+
+window.onload = mostrarJugadores;
+
+document
+  .getElementById("masculino")
+  .addEventListener("click", mostrarJugadores);
+document.getElementById("femenino").addEventListener("click", mostrarJugadoras);
 
 //SECTION #MODA
 const productos = [
@@ -106,18 +182,18 @@ const productos = [
       "https://store.fcbarcelona.com/cdn/shop/files/FCBESSENTIALSMASC2062.jpg?v=1720609432",
   },
   {
-    name: "Camiseta negra Barça",
+    name: "Camiseta azul Barça",
     price: 34.99,
     seller: "FC Barcelona Tienda",
     image:
-      "https://store.fcbarcelona.com/cdn/shop/files/FCBESSENTIALSMASC2062.jpg?v=1720609432",
+      "https://store.fcbarcelona.com/cdn/shop/files/FCBESSENTIALSMASC2213.jpg?v=1720609494&width=823",
   },
   {
-    name: "Camiseta negra Barça",
+    name: "Camiseta azul Barça - Mujer",
     price: 34.99,
     seller: "FC Barcelona Tienda",
     image:
-      "https://store.fcbarcelona.com/cdn/shop/files/FCBESSENTIALSMASC2062.jpg?v=1720609432",
+      "https://store.fcbarcelona.com/cdn/shop/files/ESSENTIALSFEM1804.jpg?v=1720609594&width=823",
   },
   {
     name: "Camiseta negra Barça",
