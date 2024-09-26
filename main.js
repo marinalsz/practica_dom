@@ -6,7 +6,6 @@ aside.innerHTML = asideContent;
 
 //HEADER
 
-
 //SECTION #JUGADORES
 
 const jugadores = [
@@ -173,6 +172,24 @@ document
 document.getElementById("femenino").addEventListener("click", mostrarJugadoras);
 
 //SECTION #MODA
+const novedades = [
+  {
+    title: "Novedades hombre",
+    image:
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1727354236/novedades-hombre_tzsbhg.webp",
+  },
+  {
+    title: "Novedades mujer",
+    image:
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1727354233/novedades-mujer_vuhxrj.webp",
+  },
+  {
+    title: "Novedades niños/as",
+    image:
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1727354227/novedades-nin%CC%83os_dwvsgh.webp",
+  },
+];
+
 const productos = [
   {
     name: "Camiseta negra Barça",
@@ -260,6 +277,19 @@ const productos = [
   },
 ];
 
+const novedadesContenedor = document.querySelector("#novedades");
+
+for (const novedad of novedades) {
+  const li = document.createElement("li");
+  li.innerHTML = `
+  <a href="#null" target="_self">
+    <img src="${novedad.image}" alt="${novedad.title}"  />
+    <h2>${novedad.title}</h2>
+  </a>
+  `;
+  novedadesContenedor.appendChild(li);
+}
+
 //FOOTER
 
 const redesSociales = [
@@ -295,14 +325,14 @@ const redesSociales = [
   },
 ];
 
-/* const socialContainer = document.querySelector("#social");
+const socialContainer = document.querySelector("#social");
 
 for (const red of redesSociales) {
   const li = document.createElement("li");
   li.innerHTML = `
-  <a href="${red.link}" target="_blank">
+  <a href="${red.link}" target="_self">
     <img src="${red.logo}" alt="${red.name}"  />
   </a>
   `;
   socialContainer.appendChild(li);
-} */
+}
