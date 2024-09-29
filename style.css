@@ -7,19 +7,15 @@
   --fcb-oxford-blue: #14213dff;
   --fcb-red: #ef1f46;
   --fcb-yellow: #fbc43f;
-
   --fcb-dark-blue: #181733;
   --fcb-pacific-cyan: #06aed5ff;
   --fcb-cerulean: #086788ff;
   --fcb-jonquil: #f0c808ff;
   --fcb-papaya-whip: #fff1d0ff;
-
   --fcb-black: #000000ff;
-
   --fcb-orange-web: #fca311ff;
   --fcb-platinum: #e5e5e5ff;
   --fcb-white: #ffffffff;
-
   --spacing: 20px;
   --small-spacing: 10px;
   --font-one: "Oswald", sans-serif;
@@ -96,22 +92,14 @@ a:hover {
 }
 
 .shop {
-  width: 150px;
-  height: 50px;
-  background-color: var(--fcb-jonquil);
-  color: var(--fcb-black);
-  font-size: 1.2em;
-  font-weight: 900;
+  border: 2px solid coral;
   text-transform: uppercase;
-  border: none;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-size: 2em;
+  color: white;
 }
 
-.shop:hover{
-  background-color: var(--fcb-black);
+.shop:hover {
+  font-weight: 500;
   font-style: italic;
 }
 
@@ -208,7 +196,7 @@ nav ul {
 
 main {
   width: 100%;
-  min-height: 400vh;
+  min-height: 500vh;
 }
 
 /*NUEVAS EQUIPACIONES*/
@@ -276,16 +264,10 @@ main {
   gap: var(--small-spacing);
   background: linear-gradient(
     90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(9, 9, 121, 1) 35%,
-    rgba(0, 212, 255, 1) 100%
-  );
-  background: linear-gradient(
-    90deg,
     rgba(63, 94, 251, 1) 0%,
     rgba(252, 70, 107, 1) 100%
   );
-  border: 5px groove white;
+  border: 2px dashed var(--fcb-white);
 }
 
 #jugadores p {
@@ -293,14 +275,8 @@ main {
   letter-spacing: 1.5px;
 }
 
-#jugadores a {
-  border-top: var(--border-two);
-  border-bottom: var(--border-two);
-}
-
 #jugadores > ul > li > a > img {
   background-color: var(--fcb-oxford-blue);
-  border: 2px solid red;
   width: 250px;
   height: 250px;
   object-fit: cover;
@@ -321,27 +297,27 @@ main {
 
 /*MODA*/
 
-#moda{
+#moda {
   width: 100%;
-  min-height: 100vh;
+  min-height: 200vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   gap: var(--spacing);
   border-bottom: 2px solid black;
 }
 
-#moda ul {
-  border: 2px solid black;
+#novedades {
   width: 100%;
   height: auto;
   display: flex;
   padding: var(--spacing);
   gap: var(--spacing);
+  flex-wrap: wrap;
 }
 
-#moda li {
+#novedades li {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -349,34 +325,74 @@ main {
   gap: var(--small-spacing);
 }
 
-#moda a {
-  border-top: var(--border-two);
-  border-bottom: var(--border-two);
-}
-
-#moda > ul > li > a > img {
-  background-color: var(--fcb-oxford-blue);
-  border: 2px solid red;
+#novedades img {
   width: 250px;
   height: 250px;
   object-fit: cover;
   transition: 0.5s;
 }
 
-#moda:hover ul > li > a > img:not(:hover) {
-  filter: saturate(0);
-  opacity: 40%;
+#productos {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 450px;
+  padding: var(--spacing);
+  gap: var(--spacing);
+}
+
+#productos li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--small-spacing);
+  background-color: #ffffff;
+  background-image: linear-gradient(
+    313deg,
+    #ffffff 0%,
+    #6284ff 50%,
+    #ff0000 100%
+  );
+  border: 6px double #000000;
+}
+
+#productos a {
+  width: auto;
+  height: 300px;
+}
+
+#productos a:hover {
+  outline: thick double var(--fcb-jonquil);
+}
+
+#productos img {
+  width: auto;
+  height: 300px;
+  object-fit: cover;
+  border: 6px double #000000;
+}
+
+#productos h3,
+#productos p {
+  width: 100%;
+  height: 75px;
+  padding: var(--spacing);
+  letter-spacing: 1.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*FOOTER*/
 
-footer{
+footer {
   width: 100%;
   min-height: 50vh;
 }
 
-#social{
-  border: 2px solid red;
+#social {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -384,7 +400,7 @@ footer{
   gap: var(--small-spacing);
 }
 
-#social img{
+#social img {
   width: 50px;
   height: auto;
 }

@@ -1,8 +1,14 @@
 //ASIDE
 
-const aside = document.querySelector("aside");
-const asideContent = `<a href="#" target="_self">Regístrate gratis y obtén un 15% dto. en tu primera compra</a>`;
-aside.innerHTML = asideContent;
+const asideTemplate = () => {
+  return `
+  <a href="#" target="_self">Regístrate gratis y obtén un 15% dto. en tu primera compra</a>
+  `;
+};
+
+const Aside = () => {
+  document.querySelector("aside").innerHTML = asideTemplate();
+};
 
 //HEADER
 
@@ -134,7 +140,7 @@ const mostrarJugadores = () => {
   for (const jugador of jugadores) {
     const li = document.createElement("li");
     li.innerHTML = `
-    <a href="#" target="_self">
+    <a href="#null target="_self">
       <img src="${jugador.image}" alt="${jugador.name}"  />
     </a>
     <p>#${jugador.number}</p>
@@ -153,7 +159,7 @@ const mostrarJugadoras = () => {
   for (const jugadora of jugadoras) {
     const li = document.createElement("li");
     li.innerHTML = `
-    <a href="#" target="_self">
+    <a href="#null" target="_self">
       <img src="${jugadora.image}" alt="${jugadora.name}"  />
     </a>
     <p>#${jugadora.number}</p>
@@ -172,6 +178,7 @@ document
 document.getElementById("femenino").addEventListener("click", mostrarJugadoras);
 
 //SECTION #MODA
+
 const novedades = [
   {
     title: "Novedades hombre",
@@ -196,98 +203,114 @@ const productos = [
     price: 34.99,
     seller: "FC Barcelona Tienda",
     image:
-      "https://store.fcbarcelona.com/cdn/shop/files/FCBESSENTIALSMASC2062.jpg?v=1720609432",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1727621655/camiseta-negra-barc%CC%A7a_r5nmql.webp",
   },
   {
     name: "Camiseta azul Barça",
     price: 34.99,
     seller: "FC Barcelona Tienda",
     image:
-      "https://store.fcbarcelona.com/cdn/shop/files/FCBESSENTIALSMASC2213.jpg?v=1720609494&width=823",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1727621735/camiseta-azul-barc%CC%A7a_zlupyo.webp",
   },
   {
     name: "Camiseta azul Barça - Mujer",
     price: 34.99,
     seller: "FC Barcelona Tienda",
     image:
-      "https://store.fcbarcelona.com/cdn/shop/files/ESSENTIALSFEM1804.jpg?v=1720609594&width=823",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1727621815/camiseta-azul-barc%CC%A7a-mujer_gdsy0i.webp",
   },
   {
-    name: "Camiseta negra Barça",
+    name: "Camisa blanca The Club",
+    price: 149.99,
+    seller: "FC Barcelona Tienda",
+    image:
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1727621988/camisa-blanca-the-club_fkuvtm.webp",
+  },
+  {
+    name: "Sudadera azul marino Barça - Mujer",
+    price: 64.99,
+    seller: "FC Barcelona Tienda",
+    image:
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1727622352/sudadera-azul-marino-barc%CC%A7a-mujer_x6akba.webp",
+  },
+  {
+    name: "Camiseta retro blaugrana Barça Cruyff",
+    price: 49.99,
+    seller: "FC Barcelona Tienda",
+    image:
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1727622487/camiseta-retro-blaugrana-barc%CC%A7a-cruyff_a8gfqb.webp",
+  },
+  {
+    name: "Camiseta crop azulgrana Barça - Mujer",
     price: 34.99,
     seller: "FC Barcelona Tienda",
     image:
-      "https://store.fcbarcelona.com/cdn/shop/files/FCBESSENTIALSMASC2062.jpg?v=1720609432",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1727622605/camiseta-crop-azulgrana-barc%CC%A7a-mujer_iets8i.webp",
   },
   {
-    name: "Camiseta negra Barça",
-    price: 34.99,
+    name: "Sudadera Força Barça",
+    price: 64.99,
     seller: "FC Barcelona Tienda",
     image:
-      "https://store.fcbarcelona.com/cdn/shop/files/FCBESSENTIALSMASC2062.jpg?v=1720609432",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1727622717/sudadera-forc%CC%A7a-barc%CC%A7a_klbplp.webp",
   },
   {
-    name: "Camiseta negra Barça",
-    price: 34.99,
+    name: "Camiseta Equipación 1995-97",
+    price: 69.99,
     seller: "FC Barcelona Tienda",
     image:
-      "https://store.fcbarcelona.com/cdn/shop/files/FCBESSENTIALSMASC2062.jpg?v=1720609432",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1727622889/camiseta-equipacion-1995-97_f6x40r.webp",
   },
   {
-    name: "Camiseta negra Barça",
-    price: 34.99,
+    name: "Camiseta estampada roja escudo Barça",
+    price: 39.99,
     seller: "FC Barcelona Tienda",
     image:
-      "https://store.fcbarcelona.com/cdn/shop/files/FCBESSENTIALSMASC2062.jpg?v=1720609432",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1727623366/camiseta-estampada-roja-escudo-barc%CC%A7a_ub5kyd.webp",
   },
   {
-    name: "Camiseta negra Barça",
-    price: 34.99,
+    name: "Polo grana Barça",
+    price: 44.99,
     seller: "FC Barcelona Tienda",
     image:
-      "https://store.fcbarcelona.com/cdn/shop/files/FCBESSENTIALSMASC2062.jpg?v=1720609432",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1727623425/polo-grana-barc%CC%A7a_lce12k.webp",
   },
   {
-    name: "Camiseta negra Barça",
-    price: 34.99,
+    name: "Chaqueta con botones FC Barcelona - Mujer",
+    price: 94.99,
     seller: "FC Barcelona Tienda",
     image:
-      "https://store.fcbarcelona.com/cdn/shop/files/FCBESSENTIALSMASC2062.jpg?v=1720609432",
-  },
-  {
-    name: "Camiseta negra Barça",
-    price: 34.99,
-    seller: "FC Barcelona Tienda",
-    image:
-      "https://store.fcbarcelona.com/cdn/shop/files/FCBESSENTIALSMASC2062.jpg?v=1720609432",
-  },
-  {
-    name: "Camiseta negra Barça",
-    price: 34.99,
-    seller: "FC Barcelona Tienda",
-    image:
-      "https://store.fcbarcelona.com/cdn/shop/files/FCBESSENTIALSMASC2062.jpg?v=1720609432",
-  },
-  {
-    name: "Camiseta negra Barça",
-    price: 34.99,
-    seller: "FC Barcelona Tienda",
-    image:
-      "https://store.fcbarcelona.com/cdn/shop/files/FCBESSENTIALSMASC2062.jpg?v=1720609432",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1727623487/chaqueta-con-botones-fc-barcelona-mujer_qxiubv.webp",
   },
 ];
 
+//Seleccionamos el ul de NOVEDADES y pintamos cada una de las cartas
 const novedadesContenedor = document.querySelector("#novedades");
 
 for (const novedad of novedades) {
   const li = document.createElement("li");
   li.innerHTML = `
+  <img src="${novedad.image}" alt="${novedad.title}"  />
   <a href="#null" target="_self">
-    <img src="${novedad.image}" alt="${novedad.title}"  />
     <h2>${novedad.title}</h2>
   </a>
   `;
   novedadesContenedor.appendChild(li);
+}
+
+//Seleccionamos el ul de PRODUCTOS y pintamos cada una de las cartas
+const productosContenedor = document.querySelector("#productos");
+
+for (const producto of productos) {
+  const li = document.createElement("li");
+  li.innerHTML = `
+  <h3>${producto.name}</h3>
+   <a href="#null" target="_self">
+      <img src="${producto.image}" alt="${producto.name}"  />
+    </a>
+    <p>${producto.price} €</p>
+  `;
+  productosContenedor.appendChild(li);
 }
 
 //FOOTER
@@ -336,3 +359,11 @@ for (const red of redesSociales) {
   `;
   socialContainer.appendChild(li);
 }
+
+//Pintamos en el HTML todos los componentes
+
+const create = () => {
+  Aside();
+};
+
+create();
