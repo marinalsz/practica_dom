@@ -89,13 +89,13 @@ a {
 a:hover {
   color: var(--fcb-jonquil);
   font-weight: bold;
+  text-decoration: underline;
 }
 
 .shop {
-  border: 2px solid coral;
   text-transform: uppercase;
   font-size: 2em;
-  color: white;
+  color: var(--fcb-red);
 }
 
 .shop:hover {
@@ -136,7 +136,7 @@ aside {
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  background: linear-gradient(blue, pink);
+  background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
   border-bottom: 2px solid black;
 }
 
@@ -168,12 +168,12 @@ nav ul {
   gap: var(--spacing);
 }
 
-.icons img {
+#iconsLinks img {
   width: 25px;
   height: auto;
 }
 
-.icons img:hover {
+#iconsLinks img:hover {
   scale: 1.1;
   filter: brightness(0) saturate(100%) invert(86%) sepia(41%) saturate(1753%)
     hue-rotate(354deg) brightness(95%) contrast(98%);
@@ -184,11 +184,13 @@ nav ul {
 }
 
 @media only screen and (max-width: 970px) {
-  .sectionLinks {
+  #sectionLinks {
     display: none;
   }
   .hidden {
     display: inline-block;
+    width: 25px;
+    height: auto;
   }
 }
 
@@ -196,14 +198,14 @@ nav ul {
 
 main {
   width: 100%;
-  min-height: 500vh;
+  min-height: 900vh;
 }
 
 /*NUEVAS EQUIPACIONES*/
 
 #nuevasEquipaciones {
   width: 100%;
-  height: 70vh;
+  height: 500px;
   overflow: hidden;
   position: relative;
   border-bottom: 2px solid black;
@@ -365,6 +367,7 @@ main {
 
 #productos a:hover {
   outline: thick double var(--fcb-jonquil);
+  transform: perspective(400px) rotate3d(1, -1, 0, -8deg);
 }
 
 #productos img {
@@ -385,22 +388,96 @@ main {
   align-items: center;
 }
 
+/*KAROL G*/
+
+#karolg{
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("https://store.fcbarcelona.com/cdn/shop/files/Main-Banner-01-Landing-Karol-G-d_2.jpg?v=1712850439&width=3840");
+  background-attachment: fixed;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom: 2px solid black;
+}
+
+#karolCollection {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 450px;
+}
+
+#karolCollection li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#karolCollection a {
+  width: auto;
+  height: 300px;
+}
+
+#karolCollection a:hover {
+  outline: thick double var(--fcb-jonquil);
+  transform: perspective(400px) rotate3d(1, -1, 0, -8deg);
+}
+
+#karolCollection img {
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+}
+
 /*FOOTER*/
 
 footer {
+  border: 2px solid red;
   width: 100%;
-  min-height: 50vh;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing);
+  gap: var(--spacing);
 }
 
-#social {
+#pago{
+  border: 2px solid yellow;
   width: 100%;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: var(--small-spacing);
+  gap: var(--spacing);
+}
+
+#pago img{
+  width: 80px;
+  height: auto;
+}
+
+#social {
+  border: 2px solid coral;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing);
 }
 
 #social img {
   width: 50px;
   height: auto;
+}
+
+footer p {
+  width: 100%;
+  height: auto;
+  text-align: center;
 }

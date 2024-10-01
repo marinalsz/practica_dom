@@ -1,16 +1,99 @@
 //ASIDE
 
-const asideTemplate = () => {
-  return `
-  <a href="#" target="_self">Regístrate gratis y obtén un 15% dto. en tu primera compra</a>
-  `;
-};
-
-const Aside = () => {
-  document.querySelector("aside").innerHTML = asideTemplate();
-};
+const aside = document.querySelector("aside");
+const asideContent = `<a href="#null" target="_self">Regístrate gratis y obtén un 15% dto. en tu primera compra</a>`;
+aside.innerHTML = asideContent;
 
 //HEADER
+
+const header = document.querySelector("header");
+const nav = document.createElement("nav");
+
+//Icono de menú
+
+const menuAnchor = document.createElement("a");
+menuAnchor.href = "#null";
+menuAnchor.target = "_self";
+menuAnchor.classList = "hidden";
+const menuImage = document.createElement("img");
+menuImage.src =
+  "https://res.cloudinary.com/darvwfw0u/image/upload/v1727793319/menu-icon_z3gewo.svg";
+menuImage.alt = "Icono de menú";
+menuAnchor.appendChild(menuImage);
+nav.appendChild(menuAnchor);
+
+//Logo de la tienda
+
+const logoAnchor = document.createElement("a");
+logoAnchor.href = "#null";
+logoAnchor.target = "_self";
+logoAnchor.classList = "logo";
+const logoImage = document.createElement("img");
+logoImage.src =
+  "https://res.cloudinary.com/darvwfw0u/image/upload/v1727792268/logo-tienda_x3le9n.png";
+logoImage.alt = "Logo FC Barcelona Tienda";
+logoAnchor.appendChild(logoImage);
+nav.appendChild(logoAnchor);
+
+//Links a otras secciones
+
+const linksSecciones = document.createElement("ul");
+linksSecciones.id = "sectionLinks";
+
+const secciones = [
+  "Equipaciones",
+  "Entrenamiento",
+  "Moda",
+  "Memorabilia",
+  "Accesorios",
+  "Rebajas",
+];
+
+for (const seccion of secciones) {
+  const li = document.createElement("li");
+  li.innerHTML = `
+  <a href="#null" target="_self">
+  ${seccion}
+  </a>
+  `;
+  linksSecciones.appendChild(li);
+}
+nav.appendChild(linksSecciones);
+
+//Links de los iconos
+
+const linksIconos = document.createElement("ul");
+linksIconos.id = "iconsLinks";
+
+const iconosHeader = [
+  {
+    icon: "https://res.cloudinary.com/darvwfw0u/image/upload/v1727793477/search-icon_tgsymb.svg",
+    name: "Icono de búsqueda",
+  },
+  {
+    icon: "https://res.cloudinary.com/darvwfw0u/image/upload/v1727793445/person-icon_vhgxhf.svg",
+    name: "Icono de persona",
+  },
+  {
+    icon: "https://res.cloudinary.com/darvwfw0u/image/upload/v1727793461/shopping-bag-icon_ecrjqw.svg",
+    name: "Icono de cesta",
+  },
+];
+
+for (const icono of iconosHeader) {
+  const li = document.createElement("li");
+  li.innerHTML = `
+   <a href="#null target="_self">
+      <img src="${icono.icon}" alt="${icono.name}"  />
+    </a>
+  `;
+  linksIconos.appendChild(li);
+}
+nav.appendChild(linksIconos);
+
+//Adjuntamos el nav al header
+
+header.appendChild(nav);
 
 //SECTION #JUGADORES
 
@@ -313,7 +396,123 @@ for (const producto of productos) {
   productosContenedor.appendChild(li);
 }
 
-//FOOTER
+//KAROL G//
+const fotos = [
+  {
+    image:
+      "https://store.fcbarcelona.com/cdn/shop/files/241KGM_1_3df43531-ca39-483d-8c6c-5bd347169f18.jpg?v=1712647153&width=1200",
+  },
+  {
+    image:
+      "https://store.fcbarcelona.com/cdn/shop/files/2403_DP_SPOTIFYxFCB_F001_084_A1_FULLRES.jpg?v=1712647494&width=1200",
+  },
+  {
+    image:
+      "https://store.fcbarcelona.com/cdn/shop/files/2403_DP_SPOTIFYxFCB_COLORS_F001_093_A2_FULLRES.jpg?v=1712647338&width=1200",
+  },
+  {
+    image:
+      "https://store.fcbarcelona.com/cdn/shop/files/2403_DP_SPOTIFYxFCB_COLORS_F003_158_54cf8294-b33c-4452-b20a-f95188c5a19d.jpg?v=1712844613&width=1200",
+  },
+  {
+    image:
+      "https://store.fcbarcelona.com/cdn/shop/files/GP22722.jpg?v=1712647326&width=1200",
+  },
+  {
+    image:
+      "https://store.fcbarcelona.com/cdn/shop/files/2403_DP_SPOTIFYxFCB_F004_105_A1_FULLRES_ff753434-cfaf-4aaa-a143-c1861e9cc17d.jpg?v=1712844638&width=1200",
+  },
+  {
+    image:
+      "https://store.fcbarcelona.com/cdn/shop/files/2403_DP_SPOTIFYxFCB_COLORS_F002_075_A2_FULLRES.jpg?v=1712758453&width=1200",
+  },
+  {
+    image:
+      "https://store.fcbarcelona.com/cdn/shop/files/241KGMF_1_63ac37da-0b30-478a-8435-e77c9b75b39f.jpg?v=1712647159&width=1200",
+  },
+  {
+    image:
+      "https://store.fcbarcelona.com/cdn/shop/files/2403_DP_SPOTIFYxFCB_COLORS_F005_072_A1_FULLRES_602da1cd-df06-45ad-9c7f-0a6da3680755.jpg?v=1712843669&width=1200",
+  },
+];
+
+//Seleccionamos el ul de karolCollection y pintamos cada una de las cartas
+const karolContenedor = document.querySelector("#karolCollection");
+
+for (const foto of fotos) {
+  const li = document.createElement("li");
+  li.innerHTML = `
+   <a href="#null" target="_self">
+      <img src="${foto.image}" alt=""  />
+    </a>
+  `;
+  karolContenedor.appendChild(li);
+}
+
+//FOOTER//
+
+const listaAyuda = document.createElement("ul");
+listaAyuda.id = "ayuda";
+
+const enlaces = [
+  "Ayuda",
+  "Pedidos",
+  "Envíos y entregas",
+  "Devoluciones",
+  "Formas de pago",
+  "Socios y Peñas",
+  "Contáctanos",
+  "Buscador de tiendas",
+];
+
+for (const enlace of enlaces) {
+  const li = document.createElement("li");
+  li.innerHTML = `
+  <a href="#null" target="_self">
+  ${enlace}
+  </a>
+  `;
+  listaAyuda.appendChild(li);
+}
+
+document.body.appendChild(listaAyuda);
+
+const tarjetas = [
+  {
+    logo: "https://res.cloudinary.com/darvwfw0u/image/upload/v1727782345/mastercard_llwdzc.svg",
+    name: "Mastercard",
+  },
+  {
+    logo: "https://res.cloudinary.com/darvwfw0u/image/upload/v1727782345/maestro_sp6pke.svg",
+    name: "Maestro",
+  },
+  {
+    logo: "https://res.cloudinary.com/darvwfw0u/image/upload/v1727782345/apple-pay_kamytk.svg",
+    name: "Apple Pay",
+  },
+  {
+    logo: "https://res.cloudinary.com/darvwfw0u/image/upload/v1727782345/visa_tgxyg0.svg",
+    name: "Visa",
+  },
+  {
+    logo: "https://res.cloudinary.com/darvwfw0u/image/upload/v1727782345/paypal_r5xwql.svg",
+    name: "Paypal",
+  },
+  {
+    logo: "https://res.cloudinary.com/darvwfw0u/image/upload/v1727782345/google-pay_reozus.svg",
+    name: "Google Pay",
+  },
+];
+
+const pagoContainer = document.querySelector("#pago");
+
+for (const tarjeta of tarjetas) {
+  const li = document.createElement("li");
+  li.innerHTML = `
+    <img src="${tarjeta.logo}" alt="${tarjeta.name}"  />
+  `;
+  pagoContainer.appendChild(li);
+}
 
 const redesSociales = [
   {
@@ -359,11 +558,3 @@ for (const red of redesSociales) {
   `;
   socialContainer.appendChild(li);
 }
-
-//Pintamos en el HTML todos los componentes
-
-const create = () => {
-  Aside();
-};
-
-create();
