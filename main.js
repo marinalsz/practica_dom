@@ -95,7 +95,102 @@ nav.appendChild(linksIconos);
 
 header.appendChild(nav);
 
+//SECTION #NUEVASEQUIPACIONES
+
+const main = document.querySelector("main");
+
+//Creamos la sección con su id
+
+const nuevasEquipaciones = document.createElement("section");
+nuevasEquipaciones.id = "nuevasEquipaciones";
+
+//Creamos el vídeo para escritorio
+
+const videoDesktop = document.createElement("video");
+videoDesktop.classList = "video-desktop";
+videoDesktop.controls = true;
+videoDesktop.autoplay = true;
+videoDesktop.muted = true;
+videoDesktop.loop = true;
+videoDesktop.playsInline = true;
+videoDesktop.src =
+  "https://res.cloudinary.com/darvwfw0u/video/upload/v1727866512/vi%CC%81deo-escritorio_kfujbf.mp4";
+videoDesktop.type = "video/mp4";
+
+//Creamos el vídeo para móvil
+
+const videoMobile = document.createElement("video");
+videoMobile.classList = "video-mobile";
+videoMobile.controls = true;
+videoMobile.autoplay = true;
+videoMobile.muted = true;
+videoMobile.loop = true;
+videoMobile.playsInline = true;
+videoMobile.src =
+  "https://res.cloudinary.com/darvwfw0u/video/upload/v1727866197/vi%CC%81deo-mo%CC%81vil_w7dpwh.mp4";
+videoMobile.type = "video/mp4";
+
+//Creamos el div con el h1 y su enlace
+
+const divInfo = document.createElement("div");
+divInfo.classList = "info";
+
+const h1 = document.createElement("h1");
+h1.textContent = "Nuevas equipaciones 24/25";
+
+const infoAnchor = document.createElement("a");
+infoAnchor.href = "#null";
+infoAnchor.target = "_self";
+infoAnchor.classList = "shop";
+infoAnchor.textContent = "Comprar";
+
+//Adjuntamos todo
+
+divInfo.appendChild(h1);
+divInfo.appendChild(infoAnchor);
+
+nuevasEquipaciones.appendChild(videoDesktop);
+nuevasEquipaciones.appendChild(videoMobile);
+nuevasEquipaciones.appendChild(divInfo);
+
+main.appendChild(nuevasEquipaciones);
+
 //SECTION #JUGADORES
+
+//Creamos la sección con su id
+
+const players = document.createElement("section");
+players.id = "jugadores";
+
+const playersH2 = document.createElement("h2");
+playersH2.textContent = "Comprar por jugador/a";
+
+const divBotones = document.createElement("div");
+divBotones.classList = "botonesEquipos";
+
+const equipoMasculinoBtn = document.createElement("button");
+equipoMasculinoBtn.id = "masculino";
+equipoMasculinoBtn.textContent = "Equipo masculino";
+
+const equipoFemeninoBtn = document.createElement("button");
+equipoFemeninoBtn.id = "femenino";
+equipoFemeninoBtn.textContent = "Equipo femenino";
+
+const ulEquipoMasculino = document.createElement("ul");
+ulEquipoMasculino.id = "equipoMasculino";
+
+const ulEquipoFemenino = document.createElement("ul");
+ulEquipoFemenino.id = "equipoFemenino";
+
+divBotones.appendChild(equipoMasculinoBtn);
+divBotones.appendChild(equipoFemeninoBtn);
+
+players.appendChild(playersH2);
+players.appendChild(divBotones);
+players.appendChild(ulEquipoMasculino);
+players.appendChild(ulEquipoFemenino);
+
+main.appendChild(players);
 
 const jugadores = [
   {
@@ -103,56 +198,56 @@ const jugadores = [
     name: "Ter Stegen",
     position: "Portero",
     image:
-      "https://www.fcbarcelona.com/photo-resources/2023/10/04/b0033e0e-48a9-416e-ba12-f4c961e527ac/mini_01-MARC-ANDRE_TER_STEGEN.png?width=1340&height=1580",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1727870749/stegen_cslrck.webp",
   },
   {
     number: 3,
     name: "Alejandro Balde",
     position: "Defensa",
     image:
-      "https://www.fcbarcelona.com/photo-resources/2023/10/03/4dcaaada-4c05-4dd0-90f6-e331b0523bf2/mini_202209_Fitxes_App_1920x1080_01_ALEJANDRO-BALDE.png?width=1340&height=1580",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1727870748/balde_xg6syt.webp",
   },
   {
     number: 4,
     name: "Ronald Araújo",
     position: "Defensa",
     image:
-      "https://www.fcbarcelona.com/photo-resources/2023/10/03/96872777-182f-413a-8ff0-afc524bec116/mini_04-RONALD_ARAUJO.png?width=1340&height=1580",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1727870749/araujo_xijndg.webp",
   },
   {
     number: 8,
     name: "Pedri",
     position: "Centrocampista",
     image:
-      "https://www.fcbarcelona.com/photo-resources/2023/10/04/de9aeea0-9ac0-4f64-b298-4fcc1d36a292/mini_08-PEDRI.png?width=1340&height=1580",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1727870748/pedri_kfh5ah.webp",
   },
   {
     number: 16,
     name: "Fermín López",
     position: "Centrocampista",
     image:
-      "https://www.fcbarcelona.com/photo-resources/2024/02/01/8688e3ca-62dc-4d0a-8cd3-69d06699b124/mini_16-FERMIN.png?width=1340&height=1580",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1727870749/fermin_uxpeyg.webp",
   },
   {
     number: 21,
     name: "Frenkie de Jong",
     position: "Centrocampista",
     image:
-      "https://www.fcbarcelona.com/photo-resources/2023/10/04/e666a68c-84f4-49bd-b4d3-111d0d8d050f/mini_21-FRENKIE_DE_JONG.png?width=1340&height=1580",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1727870749/frenkie_sivtsq.webp",
   },
   {
     number: 9,
     name: "Robert Lewandowski",
     position: "Delantero",
     image:
-      "https://www.fcbarcelona.com/photo-resources/2023/10/04/3bc3ad2a-1ad9-421a-b7b5-67d08e8661eb/mini_09-ROBERT_LEWANDOWSKI.png?width=1340&height=1580",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1727870748/robert_og4rt9.webp",
   },
   {
     number: 10,
     name: "Lamine Yamal",
     position: "Delantero",
     image:
-      "https://www.fcbarcelona.com/photo-resources/2024/07/11/e8f2f800-2d6c-4055-86fd-08e456ed8da8/Jugador-Lamine_Yamal_2.png?width=1340&height=1580",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1727870749/lamine_pn2why.webp",
   },
 ];
 
@@ -162,56 +257,56 @@ const jugadoras = [
     name: "Gemma",
     position: "Portera",
     image:
-      "https://www.fcbarcelona.com/photo-resources/2023/10/16/782e2b0e-36d0-4951-b98b-3bb4270a4fb7/25-Gemma.jpg?width=640&height=400",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1727871116/gemma_gre3ok.webp",
   },
   {
     number: 4,
     name: "María León",
     position: "Defensa",
     image:
-      "https://www.fcbarcelona.com/photo-resources/2023/10/16/fd8fdbd0-aade-4a07-ac1e-b72a81f99d43/04-Mapi.jpg?width=640&height=400",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1727871115/mapi_pish7w.webp",
   },
   {
     number: 22,
     name: "Ona Batlle",
     position: "Defensa",
     image:
-      "https://www.fcbarcelona.com/photo-resources/2023/10/16/ae61cf98-09cf-465e-8bb1-43426ec027f7/22-Ona_batlle.jpg?width=640&height=400",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1727871113/ona_frrmgt.webp",
   },
   {
     number: 11,
     name: "Alexia",
     position: "Centrocampista",
     image:
-      "https://www.fcbarcelona.com/photo-resources/2023/10/16/74b498d2-032c-4d84-b24c-e8d7d0fa575b/11-Alexia.jpg?width=640&height=400",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1727871114/alexia_ouo0us.webp",
   },
   {
     number: 12,
     name: "Patri",
     position: "Centrocampista",
     image:
-      "https://www.fcbarcelona.com/photo-resources/2023/10/16/b253d4b3-013e-4279-ab81-f2d37ac18544/12-Patri.jpg?width=640&height=400",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1727871114/patri_u485zn.webp",
   },
   {
     number: 23,
     name: "Engen",
     position: "Centrocampista",
     image:
-      "https://www.fcbarcelona.com/photo-resources/2023/10/16/906fb7ad-5be6-424e-8479-0cabc0c2785c/23-Engen.jpg?width=640&height=400",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1727871112/engen_fuqxom.webp",
   },
   {
     number: 7,
     name: "Paralluelo",
     position: "Delantera",
     image:
-      "https://www.fcbarcelona.com/photo-resources/2023/10/16/f13c1c0c-df29-43f2-b24c-63c5d7da3fc8/07-Paralluelo.jpg?width=640&height=400",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1727871112/salma_g8xh2q.webp",
   },
   {
     number: 16,
     name: "Rolfö",
     position: "Delantera",
     image:
-      "https://www.fcbarcelona.com/photo-resources/2023/10/16/13ce36ed-009d-4dce-b63f-e110f129ffe8/16-Rolfo.jpg?width=640&height=400",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1727871112/frido_v0mkfw.webp",
   },
 ];
 
@@ -258,25 +353,61 @@ window.onload = mostrarJugadores;
 document
   .getElementById("masculino")
   .addEventListener("click", mostrarJugadores);
+
 document.getElementById("femenino").addEventListener("click", mostrarJugadoras);
 
+// Obtener todos los botones
+const buttons = document.querySelectorAll("button");
+
+// Función para manejar el clic en los botones
+buttons.forEach((button) => {
+  button.addEventListener("click", function () {
+    // Remover la clase "active" de todos los botones
+    buttons.forEach((btn) => btn.classList.remove("active"));
+
+    // Agregar la clase "active" al botón pulsado
+    this.classList.add("active");
+  });
+});
+
 //SECTION #MODA
+
+const fashion = document.createElement("section");
+fashion.id = "moda";
+
+const fashionH2 = document.createElement("h2");
+fashionH2.textContent = "Moda";
+
+const ulNovedades = document.createElement("ul");
+ulNovedades.id = "novedades";
+
+const ulProductos = document.createElement("ul");
+ulProductos.id = "productos";
+
+fashion.appendChild(fashionH2);
+fashion.appendChild(ulNovedades);
+fashion.appendChild(ulProductos);
+
+main.appendChild(fashion);
 
 const novedades = [
   {
     title: "Novedades hombre",
     image:
       "https://res.cloudinary.com/darvwfw0u/image/upload/v1727354236/novedades-hombre_tzsbhg.webp",
+    alt: "Alejandro Balde con la tercera equipación del Barça",
   },
   {
     title: "Novedades mujer",
     image:
       "https://res.cloudinary.com/darvwfw0u/image/upload/v1727354233/novedades-mujer_vuhxrj.webp",
+    alt: "Salma Paralluelo con la tercera equipación del Barça",
   },
   {
     title: "Novedades niños/as",
     image:
       "https://res.cloudinary.com/darvwfw0u/image/upload/v1727354227/novedades-nin%CC%83os_dwvsgh.webp",
+    alt: "Tercera equipación del Barça",
   },
 ];
 
@@ -373,10 +504,10 @@ const novedadesContenedor = document.querySelector("#novedades");
 for (const novedad of novedades) {
   const li = document.createElement("li");
   li.innerHTML = `
-  <img src="${novedad.image}" alt="${novedad.title}"  />
-  <a href="#null" target="_self">
-    <h2>${novedad.title}</h2>
+    <a href="#null" target="_self">
+    <h3>${novedad.title}</h3>
   </a>
+  <img src="${novedad.image}" alt="${novedad.alt}"  />
   `;
   novedadesContenedor.appendChild(li);
 }
@@ -396,7 +527,23 @@ for (const producto of productos) {
   productosContenedor.appendChild(li);
 }
 
-//KAROL G//
+//SECTION #COLABORACION
+
+const nuevaColeccion = document.createElement("section");
+nuevaColeccion.id = "colaboracion";
+
+const nuevaColeccionH2 = document.createElement("h2");
+nuevaColeccionH2.textContent = "Barça x Karol G";
+
+const ulNuevaColeccion = document.createElement("ul");
+ulNuevaColeccion.id = "karolGCollection";
+
+
+nuevaColeccion.appendChild(nuevaColeccionH2);
+nuevaColeccion.appendChild(ulNuevaColeccion);
+
+main.appendChild(nuevaColeccion);
+
 const fotos = [
   {
     image:
@@ -437,7 +584,7 @@ const fotos = [
 ];
 
 //Seleccionamos el ul de karolCollection y pintamos cada una de las cartas
-const karolContenedor = document.querySelector("#karolCollection");
+const karolContenedor = document.querySelector("#karolGCollection");
 
 for (const foto of fotos) {
   const li = document.createElement("li");
@@ -449,10 +596,76 @@ for (const foto of fotos) {
   karolContenedor.appendChild(li);
 }
 
-//FOOTER//
+//FOOTER
 
-const listaAyuda = document.createElement("ul");
-listaAyuda.id = "ayuda";
+const footer = document.querySelector("footer");
+
+const seccionFormulario = document.createElement("section");
+seccionFormulario.classList = "form-information";
+
+const seccionFormularioH3 = document.createElement("h3");
+seccionFormularioH3.textContent = "Suscríbete a nuestros correos electrónicos";
+
+const seccionFormularioParrafo = document.createElement("p");
+seccionFormularioParrafo.textContent = "Sé el primero en enterarte de nuevas colecciones y ofertas exclusivas.";
+
+const formulario = document.createElement("form");
+formulario.action = "/";
+formulario.method = "post";
+formulario.enctype = "application/x-www-form-urlencoded";
+formulario.target = "_self";
+//formulario.accept-charset = "UTF-8";
+formulario.autocomplete="off";
+formulario.novalidate = true;
+
+const label = document.createElement("label");
+label.for = "email";
+label.textContent = "Correo electrónico:";
+
+const input = document.createElement("input");
+input.type = "email";
+input.name = "email";
+input.id = "email";
+input.placeholder = "Correo electrónico";
+input.required = true;
+
+const submitBtn = document.createElement("button");
+submitBtn.type = "input";
+submitBtn.textContent = "Enviar";
+
+formulario.appendChild(label);
+formulario.appendChild(input);
+formulario.appendChild(submitBtn);
+
+seccionFormulario.appendChild(seccionFormularioH3);
+seccionFormulario.appendChild(seccionFormularioParrafo);
+seccionFormulario.appendChild(formulario);
+
+const ulEnlacesAyuda = document.createElement("ul");
+ulEnlacesAyuda.id = "enlacesAyuda";
+
+const ulIconosPago = document.createElement("ul");
+ulIconosPago.id = "iconosPago";
+
+const ulIconosRedes = document.createElement("ul");
+ulIconosRedes.id = "iconosRedes";
+
+const parrafo = document.createElement("p");
+parrafo.textContent = "©FC Barcelona - Official Store - Spotify Camp Nou. Powered by";
+
+const githubAnchor = document.createElement("a");
+githubAnchor.href = "https://github.com/marinalsz";
+githubAnchor.rel = "noopener";
+githubAnchor.target = "_blank";
+githubAnchor.textContent = "Marina López";
+
+parrafo.appendChild(githubAnchor);
+
+footer.appendChild(seccionFormulario);
+footer.appendChild(ulEnlacesAyuda);
+footer.appendChild(ulIconosPago);
+footer.appendChild(ulIconosRedes);
+footer.appendChild(parrafo);
 
 const enlaces = [
   "Ayuda",
@@ -465,6 +678,8 @@ const enlaces = [
   "Buscador de tiendas",
 ];
 
+const enlacesContainer = document.querySelector("#enlacesAyuda");
+
 for (const enlace of enlaces) {
   const li = document.createElement("li");
   li.innerHTML = `
@@ -472,10 +687,8 @@ for (const enlace of enlaces) {
   ${enlace}
   </a>
   `;
-  listaAyuda.appendChild(li);
+  enlacesContainer.appendChild(li);
 }
-
-document.body.appendChild(listaAyuda);
 
 const tarjetas = [
   {
@@ -504,7 +717,7 @@ const tarjetas = [
   },
 ];
 
-const pagoContainer = document.querySelector("#pago");
+const pagoContainer = document.querySelector("#iconosPago");
 
 for (const tarjeta of tarjetas) {
   const li = document.createElement("li");
@@ -547,7 +760,7 @@ const redesSociales = [
   },
 ];
 
-const socialContainer = document.querySelector("#social");
+const socialContainer = document.querySelector("#iconosRedes");
 
 for (const red of redesSociales) {
   const li = document.createElement("li");

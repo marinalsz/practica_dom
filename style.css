@@ -96,10 +96,11 @@ a:hover {
   text-transform: uppercase;
   font-size: 2em;
   color: var(--fcb-red);
+  font-weight: 900;
+  text-shadow: 2px 2px rgb(0, 0, 0);
 }
 
 .shop:hover {
-  font-weight: 500;
   font-style: italic;
 }
 
@@ -115,6 +116,8 @@ button {
   font-size: 1em;
   text-align: center;
   text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 button:hover {
@@ -124,6 +127,11 @@ button:hover {
 button:active {
   box-shadow: #422800 2px 2px 0 0;
   transform: translate(2px, 2px);
+}
+
+button.active {
+  background-color: var(--fcb-red);
+  color: var(--fcb-white);
 }
 
 /*ASIDE*/
@@ -136,7 +144,11 @@ aside {
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(252, 70, 107, 1) 100%
+  );
   border-bottom: 2px solid black;
 }
 
@@ -183,42 +195,35 @@ nav ul {
   display: none;
 }
 
-@media only screen and (max-width: 970px) {
-  #sectionLinks {
-    display: none;
-  }
-  .hidden {
-    display: inline-block;
-    width: 25px;
-    height: auto;
-  }
-}
-
 /*MAIN*/
 
 main {
   width: 100%;
-  min-height: 900vh;
+  min-height: 600vh;
 }
 
 /*NUEVAS EQUIPACIONES*/
 
 #nuevasEquipaciones {
   width: 100%;
-  height: 500px;
+  min-height: 100vh;
   overflow: hidden;
   position: relative;
   border-bottom: 2px solid black;
 }
 
-#nuevasEquipaciones > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.video-desktop {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   transform: translate(-50%, -50%);
+}
+
+.video-mobile {
+  display: none;
 }
 
 .info {
@@ -232,7 +237,6 @@ main {
   padding: var(--spacing);
   position: absolute;
   bottom: 10%;
-  z-index: 1;
 }
 
 /*JUGADORES*/
@@ -242,9 +246,10 @@ main {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   gap: var(--spacing);
+  padding: var(--spacing);
   border-bottom: 2px solid black;
 }
 
@@ -285,11 +290,6 @@ main {
   transition: 0.5s;
 }
 
-#jugadores:hover ul > li > a > img:not(:hover) {
-  filter: saturate(0);
-  opacity: 40%;
-}
-
 .botonesEquipos {
   display: flex;
   justify-content: center;
@@ -307,6 +307,7 @@ main {
   justify-content: space-between;
   align-items: center;
   gap: var(--spacing);
+  padding: var(--spacing);
   border-bottom: 2px solid black;
 }
 
@@ -314,24 +315,39 @@ main {
   width: 100%;
   height: auto;
   display: flex;
+  justify-content: center;
+  align-items: center;
   padding: var(--spacing);
   gap: var(--spacing);
   flex-wrap: wrap;
 }
 
 #novedades li {
+  border: 2px solid lawngreen;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: var(--small-spacing);
+  background-color: #000000;
+  background: linear-gradient(
+    106deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(93, 68, 249, 1) 100%
+  );
+  border-radius: 10px;
 }
 
 #novedades img {
-  width: 250px;
-  height: 250px;
+  width: 400px;
+  height: 450px;
   object-fit: cover;
   transition: 0.5s;
+  border-radius: 10px;
+}
+
+#novedades img:hover {
+  scale: 1.1;
 }
 
 #productos {
@@ -350,13 +366,7 @@ main {
   justify-content: center;
   align-items: center;
   gap: var(--small-spacing);
-  background-color: #ffffff;
-  background-image: linear-gradient(
-    313deg,
-    #ffffff 0%,
-    #6284ff 50%,
-    #ff0000 100%
-  );
+  background: linear-gradient(313deg, #ffffff 0%, #6284ff 50%, #ff0000 100%);
   border: 6px double #000000;
 }
 
@@ -388,9 +398,9 @@ main {
   align-items: center;
 }
 
-/*KAROL G*/
+/*COLABORACIÓN*/
 
-#karolg{
+#colaboracion {
   width: 100%;
   min-height: 100vh;
   background-image: url("https://store.fcbarcelona.com/cdn/shop/files/Main-Banner-01-Landing-Karol-G-d_2.jpg?v=1712850439&width=3840");
@@ -399,35 +409,36 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
   border-bottom: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing);
+  gap: var(--small-spacing);
 }
 
-#karolCollection {
+#karolGCollection {
+  border: 2px solid khaki;
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-auto-rows: 450px;
+  grid-template-columns: 200px 200px 200px 200px;
+  grid-template-rows: 200px 200px 200px;
+  grid-gap: 1rem;
 }
 
-#karolCollection li {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#karolCollection a {
+#karolGCollection a {
   width: auto;
   height: 300px;
 }
 
-#karolCollection a:hover {
+#karolGCollection a:hover {
   outline: thick double var(--fcb-jonquil);
   transform: perspective(400px) rotate3d(1, -1, 0, -8deg);
 }
 
-#karolCollection img {
-  width: auto;
+#karolGCollection img {
+  width: 100%;
   height: 100%;
   object-fit: cover;
 }
@@ -435,7 +446,6 @@ main {
 /*FOOTER*/
 
 footer {
-  border: 2px solid red;
   width: 100%;
   min-height: 60vh;
   display: flex;
@@ -446,8 +456,7 @@ footer {
   gap: var(--spacing);
 }
 
-#pago{
-  border: 2px solid yellow;
+#iconosPago {
   width: 100%;
   height: auto;
   display: flex;
@@ -456,13 +465,12 @@ footer {
   gap: var(--spacing);
 }
 
-#pago img{
+#iconosPago img {
   width: 80px;
   height: auto;
 }
 
-#social {
-  border: 2px solid coral;
+#iconosRedes {
   width: 100%;
   height: auto;
   display: flex;
@@ -471,7 +479,7 @@ footer {
   gap: var(--spacing);
 }
 
-#social img {
+#iconosRedes img {
   width: 50px;
   height: auto;
 }
@@ -480,4 +488,27 @@ footer p {
   width: 100%;
   height: auto;
   text-align: center;
+}
+
+/*MAQUETACIÓN MÓVIL*/
+
+@media only screen and (max-width: 970px) {
+  #sectionLinks {
+    display: none;
+  }
+  .hidden {
+    display: inline-block;
+    width: 25px;
+    height: auto;
+  }
+  .video-mobile {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+  }
 }
