@@ -450,10 +450,29 @@ footer {
   min-height: 60vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: var(--spacing);
   gap: var(--spacing);
+}
+
+.form-information {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing);
+  gap: var(--spacing);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: var(--small-spacing);
 }
 
 #iconosPago {
