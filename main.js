@@ -538,7 +538,6 @@ nuevaColeccionH2.textContent = "Barça x Karol G";
 const ulNuevaColeccion = document.createElement("ul");
 ulNuevaColeccion.id = "karolGCollection";
 
-
 nuevaColeccion.appendChild(nuevaColeccionH2);
 nuevaColeccion.appendChild(ulNuevaColeccion);
 
@@ -547,39 +546,51 @@ main.appendChild(nuevaColeccion);
 const fotos = [
   {
     image:
-      "https://store.fcbarcelona.com/cdn/shop/files/241KGM_1_3df43531-ca39-483d-8c6c-5bd347169f18.jpg?v=1712647153&width=1200",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1728487233/camiseta-karol-hombre_bw7d2b.webp",
+    title: "Camiseta masculina de la colección especial con Karol G",
   },
   {
     image:
-      "https://store.fcbarcelona.com/cdn/shop/files/2403_DP_SPOTIFYxFCB_F001_084_A1_FULLRES.jpg?v=1712647494&width=1200",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1728487234/camiseta-karol-alexia_fieefh.webp",
+    title:
+      "Alexia Putellas con la camiseta de la colección especial con Karol G",
   },
   {
     image:
-      "https://store.fcbarcelona.com/cdn/shop/files/2403_DP_SPOTIFYxFCB_COLORS_F001_093_A2_FULLRES.jpg?v=1712647338&width=1200",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1728487233/camiseta-karol-torres_vyynps.webp",
+    title: "Ferrán Torres con la camiseta de la colección especial con Karol G",
   },
   {
     image:
-      "https://store.fcbarcelona.com/cdn/shop/files/2403_DP_SPOTIFYxFCB_COLORS_F003_158_54cf8294-b33c-4452-b20a-f95188c5a19d.jpg?v=1712844613&width=1200",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1728487233/camiseta-karol-robert_gempnp.webp",
+    title:
+      "Robert Lewandowski con la camiseta de la colección especial con Karol G",
   },
   {
     image:
-      "https://store.fcbarcelona.com/cdn/shop/files/GP22722.jpg?v=1712647326&width=1200",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1728487399/camisetas-karol_a8zwit.webp",
+    title: "Camisetas de la colección especial con Karol G",
   },
   {
     image:
-      "https://store.fcbarcelona.com/cdn/shop/files/2403_DP_SPOTIFYxFCB_F004_105_A1_FULLRES_ff753434-cfaf-4aaa-a143-c1861e9cc17d.jpg?v=1712844638&width=1200",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1728487233/camiseta-karol-salma_uava7a.webp",
+    title:
+      "Salma Paralluelo con la camiseta de la colección especial con Karol G",
   },
   {
     image:
-      "https://store.fcbarcelona.com/cdn/shop/files/2403_DP_SPOTIFYxFCB_COLORS_F002_075_A2_FULLRES.jpg?v=1712758453&width=1200",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1728487232/camiseta-karol-araujo_dzxzxi.webp",
+    title: "Ronald Araújo con la camiseta de la colección especial con Karol G",
   },
   {
     image:
-      "https://store.fcbarcelona.com/cdn/shop/files/241KGMF_1_63ac37da-0b30-478a-8435-e77c9b75b39f.jpg?v=1712647159&width=1200",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1728487232/camiseta-karol-mujer_yn6oov.webp",
+    title: "Camiseta femenina de la colección especial con Karol G",
   },
   {
     image:
-      "https://store.fcbarcelona.com/cdn/shop/files/2403_DP_SPOTIFYxFCB_COLORS_F005_072_A1_FULLRES_602da1cd-df06-45ad-9c7f-0a6da3680755.jpg?v=1712843669&width=1200",
+      "https://res.cloudinary.com/darvwfw0u/image/upload/v1728487232/camiseta-karol-lamine_uiszw1.webp",
+    title: "Lamine Yamal con la camiseta de la colección especial con Karol G",
   },
 ];
 
@@ -590,7 +601,7 @@ for (const foto of fotos) {
   const li = document.createElement("li");
   li.innerHTML = `
    <a href="#null" target="_self">
-      <img src="${foto.image}" alt=""  />
+      <img src="${foto.image}" alt="${foto.title}"  />
     </a>
   `;
   karolContenedor.appendChild(li);
@@ -607,7 +618,8 @@ const seccionFormularioH3 = document.createElement("h3");
 seccionFormularioH3.textContent = "Suscríbete a nuestros correos electrónicos";
 
 const seccionFormularioParrafo = document.createElement("p");
-seccionFormularioParrafo.textContent = "Sé el primero en enterarte de nuevas colecciones y ofertas exclusivas.";
+seccionFormularioParrafo.textContent =
+  "Sé el primero en enterarte de nuevas colecciones y ofertas exclusivas.";
 
 const formulario = document.createElement("form");
 formulario.action = "/";
@@ -615,7 +627,7 @@ formulario.method = "post";
 formulario.enctype = "application/x-www-form-urlencoded";
 formulario.target = "_self";
 //formulario.accept-charset = "UTF-8";
-formulario.autocomplete="off";
+formulario.autocomplete = "off";
 formulario.novalidate = true;
 
 const label = document.createElement("label");
@@ -651,7 +663,8 @@ const ulIconosRedes = document.createElement("ul");
 ulIconosRedes.id = "iconosRedes";
 
 const parrafo = document.createElement("p");
-parrafo.textContent = "©FC Barcelona - Official Store - Spotify Camp Nou. Powered by";
+parrafo.textContent =
+  "©FC Barcelona - Official Store - Spotify Camp Nou. Powered by ";
 
 const githubAnchor = document.createElement("a");
 githubAnchor.href = "https://github.com/marinalsz";
@@ -729,32 +742,32 @@ for (const tarjeta of tarjetas) {
 
 const redesSociales = [
   {
-    logo: "https://cdn-icons-png.flaticon.com/128/5969/5969020.png",
+    logo: "https://res.cloudinary.com/darvwfw0u/image/upload/v1728481955/twitter_yuxnpt.png",
     name: "Twitter",
     link: "https://x.com/fcbarcelona_es",
   },
   {
-    logo: "https://cdn-icons-png.flaticon.com/128/2168/2168281.png",
+    logo: "https://res.cloudinary.com/darvwfw0u/image/upload/v1728481955/facebook_dmlask.png",
     name: "Facebook",
     link: "https://www.facebook.com/fcbarcelona/",
   },
   {
-    logo: "https://cdn-icons-png.flaticon.com/128/1384/1384015.png",
+    logo: "https://res.cloudinary.com/darvwfw0u/image/upload/v1728481955/instagram_av73fl.png",
     name: "Instagram",
     link: "https://www.instagram.com/fcbarcelona/",
   },
   {
-    logo: "https://cdn-icons-png.flaticon.com/128/3116/3116491.png",
+    logo: "https://res.cloudinary.com/darvwfw0u/image/upload/v1728481955/tik-tok_w1ne5w.png",
     name: "TikTok",
     link: "https://www.tiktok.com/@fcbarcelona",
   },
   {
-    logo: "https://cdn-icons-png.flaticon.com/128/4494/4494467.png",
+    logo: "https://res.cloudinary.com/darvwfw0u/image/upload/v1728481955/youtube_imvwz1.png",
     name: "Youtube",
     link: "https://www.youtube.com/user/fcbarcelona",
   },
   {
-    logo: "https://cdn-icons-png.flaticon.com/128/2111/2111685.png",
+    logo: "https://res.cloudinary.com/darvwfw0u/image/upload/v1728481955/spotify_jzkan8.png",
     name: "Spotify",
     link: "https://open.spotify.com/user/31gorrj76f2m3wczoifm6f6tbn3q?si=a20bf0c076684729&nd=1",
   },

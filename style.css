@@ -29,16 +29,11 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background-color: var(--fcb-blue);
   color: var(--fcb-white);
   font-family: var(--font-three);
   border: 2px solid black;
-  transition: 0.3s;
 }
 
 body::-webkit-scrollbar {
@@ -68,6 +63,8 @@ h1 {
   color: var(--fcb-white);
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
+  animation: lightSpeedInLeft;
+  animation-duration: 2s;
 }
 
 h2 {
@@ -180,6 +177,11 @@ nav ul {
   gap: var(--spacing);
 }
 
+.logo img{
+  width: 200px;
+  height: auto;
+}
+
 #iconsLinks img {
   width: 25px;
   height: auto;
@@ -287,7 +289,6 @@ main {
   width: 250px;
   height: 250px;
   object-fit: cover;
-  transition: 0.5s;
 }
 
 .botonesEquipos {
@@ -347,7 +348,7 @@ main {
 }
 
 #novedades img:hover {
-  scale: 1.1;
+  scale: 1.05;
 }
 
 #productos {
@@ -403,7 +404,7 @@ main {
 #colaboracion {
   width: 100%;
   min-height: 100vh;
-  background-image: url("https://store.fcbarcelona.com/cdn/shop/files/Main-Banner-01-Landing-Karol-G-d_2.jpg?v=1712850439&width=3840");
+  background-image: url("https://res.cloudinary.com/darvwfw0u/image/upload/v1728487484/karol-banner_v7xbvf.webp");
   background-attachment: fixed;
   background-position: top;
   background-repeat: no-repeat;
@@ -414,17 +415,15 @@ main {
   justify-content: space-between;
   align-items: center;
   padding: var(--spacing);
-  gap: var(--small-spacing);
+  gap: var(--spacing);
 }
 
 #karolGCollection {
-  border: 2px solid khaki;
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: 200px 200px 200px 200px;
-  grid-template-rows: 200px 200px 200px;
-  grid-gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
 }
 
 #karolGCollection a {
@@ -441,6 +440,7 @@ main {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 12px;
 }
 
 /*FOOTER*/
@@ -454,6 +454,7 @@ footer {
   align-items: center;
   padding: var(--spacing);
   gap: var(--spacing);
+  background-color: var(--fcb-red);
 }
 
 .form-information {
@@ -475,6 +476,15 @@ form {
   gap: var(--small-spacing);
 }
 
+#enlacesAyuda {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--small-spacing);
+}
+
 #iconosPago {
   width: 100%;
   height: auto;
@@ -485,8 +495,8 @@ form {
 }
 
 #iconosPago img {
-  width: 80px;
-  height: auto;
+  width: 100%;
+  height: 25px;
 }
 
 #iconosRedes {
@@ -499,8 +509,14 @@ form {
 }
 
 #iconosRedes img {
-  width: 50px;
-  height: auto;
+  width: 100%;
+  height: 40px;
+}
+
+#iconosRedes img:hover {
+  scale: 1.1;
+  filter: brightness(0) saturate(100%) invert(86%) sepia(41%) saturate(1753%)
+    hue-rotate(354deg) brightness(95%) contrast(98%);
 }
 
 footer p {
@@ -529,5 +545,11 @@ footer p {
     height: 100%;
     object-fit: cover;
     transform: translate(-50%, -50%);
+  }
+  #enlacesAyuda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
