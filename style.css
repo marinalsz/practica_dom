@@ -177,7 +177,7 @@ nav ul {
   gap: var(--spacing);
 }
 
-.logo img{
+.logo img {
   width: 200px;
   height: auto;
 }
@@ -447,14 +447,14 @@ main {
 
 footer {
   width: 100%;
-  min-height: 60vh;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: var(--spacing);
   gap: var(--spacing);
-  background-color: var(--fcb-red);
+  background-color: var(--fcb-dark-blue);
 }
 
 .form-information {
@@ -473,7 +473,10 @@ form {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  gap: var(--small-spacing);
+  padding: var(--spacing);
+  gap: var(--spacing);
+  border: 1px solid #f9f9f9;
+  border-radius: 10px;
 }
 
 #enlacesAyuda {
@@ -482,6 +485,7 @@ form {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: var(--spacing);
   gap: var(--small-spacing);
 }
 
@@ -491,12 +495,14 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: var(--spacing);
   gap: var(--spacing);
 }
 
 #iconosPago img {
   width: 100%;
   height: 25px;
+  filter: invert(50%);
 }
 
 #iconosRedes {
@@ -505,12 +511,14 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: var(--spacing);
   gap: var(--spacing);
 }
 
 #iconosRedes img {
   width: 100%;
   height: 40px;
+  filter: invert(100%);
 }
 
 #iconosRedes img:hover {
@@ -522,6 +530,7 @@ form {
 footer p {
   width: 100%;
   height: auto;
+  padding: var(--spacing);
   text-align: center;
 }
 
