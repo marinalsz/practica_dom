@@ -157,8 +157,6 @@ main.appendChild(nuevasEquipaciones);
 
 //SECTION #JUGADORES
 
-//Creamos la sección con su id
-
 const players = document.createElement("section");
 players.id = "jugadores";
 
@@ -191,6 +189,8 @@ players.appendChild(ulEquipoMasculino);
 players.appendChild(ulEquipoFemenino);
 
 main.appendChild(players);
+
+//Arrays de lxs futbolistas
 
 const jugadores = [
   {
@@ -310,6 +310,8 @@ const jugadoras = [
   },
 ];
 
+//Funciones para mostrar lxs jugadorxs por pantalla
+
 const mostrarJugadores = () => {
   const contenedorJugadores = document.getElementById("equipoMasculino");
   contenedorJugadores.innerHTML = "";
@@ -348,6 +350,8 @@ const mostrarJugadoras = () => {
   }
 };
 
+//Para que al cargar la página salga por defecto la plantilla del equipo masculino y al pulsar cada botón aparezca su contenido correspondiente
+
 window.onload = mostrarJugadores;
 
 document
@@ -356,17 +360,14 @@ document
 
 document.getElementById("femenino").addEventListener("click", mostrarJugadoras);
 
-// Obtener todos los botones
+// Función para añadir la clase active cada vez que se clicka un botón
+
 const buttons = document.querySelectorAll("button");
 
-// Función para manejar el clic en los botones
 buttons.forEach((button) => {
   button.addEventListener("click", function () {
-    // Remover la clase "active" de todos los botones
     buttons.forEach((btn) => btn.classList.remove("active"));
-
-    // Agregar la clase "active" al botón pulsado
-    this.classList.add("active");
+    button.classList.add("active");
   });
 });
 
@@ -390,6 +391,8 @@ fashion.appendChild(ulProductos);
 
 main.appendChild(fashion);
 
+//Array de novedades
+
 const novedades = [
   {
     title: "Novedades hombre",
@@ -411,94 +414,85 @@ const novedades = [
   },
 ];
 
+//Array de productos
+
 const productos = [
   {
     name: "Camiseta negra Barça",
     price: 34.99,
-    seller: "FC Barcelona Tienda",
     image:
       "https://res.cloudinary.com/darvwfw0u/image/upload/v1727621655/camiseta-negra-barc%CC%A7a_r5nmql.webp",
   },
   {
     name: "Camiseta azul Barça",
     price: 34.99,
-    seller: "FC Barcelona Tienda",
     image:
       "https://res.cloudinary.com/darvwfw0u/image/upload/v1727621735/camiseta-azul-barc%CC%A7a_zlupyo.webp",
   },
   {
     name: "Camiseta azul Barça - Mujer",
     price: 34.99,
-    seller: "FC Barcelona Tienda",
     image:
       "https://res.cloudinary.com/darvwfw0u/image/upload/v1727621815/camiseta-azul-barc%CC%A7a-mujer_gdsy0i.webp",
   },
   {
     name: "Camisa blanca The Club",
     price: 149.99,
-    seller: "FC Barcelona Tienda",
     image:
       "https://res.cloudinary.com/darvwfw0u/image/upload/v1727621988/camisa-blanca-the-club_fkuvtm.webp",
   },
   {
     name: "Sudadera azul marino Barça - Mujer",
     price: 64.99,
-    seller: "FC Barcelona Tienda",
     image:
       "https://res.cloudinary.com/darvwfw0u/image/upload/v1727622352/sudadera-azul-marino-barc%CC%A7a-mujer_x6akba.webp",
   },
   {
     name: "Camiseta retro blaugrana Barça Cruyff",
     price: 49.99,
-    seller: "FC Barcelona Tienda",
     image:
       "https://res.cloudinary.com/darvwfw0u/image/upload/v1727622487/camiseta-retro-blaugrana-barc%CC%A7a-cruyff_a8gfqb.webp",
   },
   {
-    name: "Camiseta crop azulgrana Barça - Mujer",
+    name: "Camiseta crop Barça - Mujer",
     price: 34.99,
-    seller: "FC Barcelona Tienda",
     image:
       "https://res.cloudinary.com/darvwfw0u/image/upload/v1727622605/camiseta-crop-azulgrana-barc%CC%A7a-mujer_iets8i.webp",
   },
   {
     name: "Sudadera Força Barça",
     price: 64.99,
-    seller: "FC Barcelona Tienda",
     image:
       "https://res.cloudinary.com/darvwfw0u/image/upload/v1727622717/sudadera-forc%CC%A7a-barc%CC%A7a_klbplp.webp",
   },
   {
     name: "Camiseta Equipación 1995-97",
     price: 69.99,
-    seller: "FC Barcelona Tienda",
     image:
       "https://res.cloudinary.com/darvwfw0u/image/upload/v1727622889/camiseta-equipacion-1995-97_f6x40r.webp",
   },
   {
     name: "Camiseta estampada roja escudo Barça",
     price: 39.99,
-    seller: "FC Barcelona Tienda",
     image:
       "https://res.cloudinary.com/darvwfw0u/image/upload/v1727623366/camiseta-estampada-roja-escudo-barc%CC%A7a_ub5kyd.webp",
   },
   {
     name: "Polo grana Barça",
     price: 44.99,
-    seller: "FC Barcelona Tienda",
     image:
       "https://res.cloudinary.com/darvwfw0u/image/upload/v1727623425/polo-grana-barc%CC%A7a_lce12k.webp",
   },
   {
     name: "Chaqueta con botones FC Barcelona - Mujer",
     price: 94.99,
-    seller: "FC Barcelona Tienda",
     image:
       "https://res.cloudinary.com/darvwfw0u/image/upload/v1727623487/chaqueta-con-botones-fc-barcelona-mujer_qxiubv.webp",
   },
 ];
 
-//Seleccionamos el ul de NOVEDADES y pintamos cada una de las cartas
+//Mostramos por pantalla cada una de las novedades
+
 const novedadesContenedor = document.querySelector("#novedades");
 
 for (const novedad of novedades) {
@@ -512,7 +506,8 @@ for (const novedad of novedades) {
   novedadesContenedor.appendChild(li);
 }
 
-//Seleccionamos el ul de PRODUCTOS y pintamos cada una de las cartas
+//Mostramos por pantalla cada uno de los productos
+
 const productosContenedor = document.querySelector("#productos");
 
 for (const producto of productos) {
@@ -542,6 +537,8 @@ nuevaColeccion.appendChild(nuevaColeccionH2);
 nuevaColeccion.appendChild(ulNuevaColeccion);
 
 main.appendChild(nuevaColeccion);
+
+//Array de productos de la nueva colaboración
 
 const fotos = [
   {
@@ -594,7 +591,8 @@ const fotos = [
   },
 ];
 
-//Seleccionamos el ul de karolCollection y pintamos cada una de las cartas
+//Mostramos por pantalla cada una de las imágenes
+
 const karolContenedor = document.querySelector("#karolGCollection");
 
 for (const foto of fotos) {
@@ -611,6 +609,8 @@ for (const foto of fotos) {
 
 const footer = document.querySelector("footer");
 
+//Sección del formulario con sus elementos
+
 const seccionFormulario = document.createElement("section");
 seccionFormulario.classList = "form-information";
 
@@ -626,7 +626,6 @@ formulario.action = "/";
 formulario.method = "post";
 formulario.enctype = "application/x-www-form-urlencoded";
 formulario.target = "_self";
-//formulario.accept-charset = "UTF-8";
 formulario.autocomplete = "off";
 formulario.novalidate = true;
 
@@ -664,7 +663,7 @@ ulIconosRedes.id = "iconosRedes";
 
 const parrafo = document.createElement("p");
 parrafo.textContent =
-  "©FC Barcelona - Official Store - Spotify Camp Nou. Powered by ";
+  "©FC Barcelona - Non-official Store - Spotify Camp Nou. Powered by ";
 
 const githubAnchor = document.createElement("a");
 githubAnchor.href = "https://github.com/marinalsz";
@@ -679,6 +678,8 @@ footer.appendChild(ulEnlacesAyuda);
 footer.appendChild(ulIconosPago);
 footer.appendChild(ulIconosRedes);
 footer.appendChild(parrafo);
+
+//Enlaces de ayuda
 
 const enlaces = [
   "Ayuda",
@@ -702,6 +703,8 @@ for (const enlace of enlaces) {
   `;
   enlacesContainer.appendChild(li);
 }
+
+//Array de métodos de pago
 
 const tarjetas = [
   {
@@ -739,6 +742,8 @@ for (const tarjeta of tarjetas) {
   `;
   pagoContainer.appendChild(li);
 }
+
+//Array de iconos de redes sociales
 
 const redesSociales = [
   {
